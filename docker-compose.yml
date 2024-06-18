@@ -11,7 +11,7 @@ services:
       - VIRTUAL_HOST=${VIRTUAL_WEB_HOST}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.${URL_PREFIX}.rule=Host(`todoapp.sreher.de`)"
+      - "traefik.http.routers.${URL_PREFIX}.rule=Host(`${VIRTUAL_WEB_HOST}`)"
       - "traefik.http.routers.${URL_PREFIX}.entrypoints=websecure"
       - "traefik.http.routers.${URL_PREFIX}.tls.certresolver=myresolver"
       - "traefik.docker.network=traefik-net"
